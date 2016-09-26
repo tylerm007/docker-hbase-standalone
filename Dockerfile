@@ -1,7 +1,7 @@
 FROM dockerfile/java:oracle-java8
 MAINTAINER Cogniteev <tech@cogniteev.com>
 
-ENV HBASE_VERSION=0.98.10
+ENV HBASE_VERSION=1.2.3
 
 RUN groupadd -r hbase && useradd -m -r -g hbase hbase
 
@@ -40,3 +40,4 @@ EXPOSE 60030
 
 WORKDIR /home/hbase
 CMD /home/hbase/bin/hbase master start
+CMD /home/hbase/bin/hbase rest start -p 2199
